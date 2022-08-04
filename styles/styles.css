@@ -1,0 +1,35 @@
+html {
+    background: url(mountainbackgroundright.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 100%;
+}
+
+p {
+    font-size: 1.3em;
+    align-self: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opacity {
+    opacity: 0.8;
+}
+
+#formcontainer {
+    background-color: #72928c;
+    width: 25%;
+    border: 15px solid #72928c;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    
+}
