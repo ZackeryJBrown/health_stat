@@ -31,16 +31,25 @@
 		<input id="end_date" class="form-controll" type="date" placeholder="End Date">
 	</form>
 
-	
 
-	<button>Load Results</button>
-	<div id="graphdiv" class="center, opacity">
-	
+
+	<button id="load_results">Load Results</button>
+
+	<div id="table_div" class="hidden">
+	<table id=results_table>
+  		<tr>
+    		<th>Systolic</th>
+    		<th>Diastolic</th>
+    		<th>Heartrate (BPM)</th>
+  		</tr>
 	</div>
+  
+ 
+</table> 
 
 
 </body>
 
-<script src="includes/graphs.js"></script>
+<script src="graphs.js"></script>
 
 </html>

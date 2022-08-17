@@ -13,6 +13,14 @@ p {
     align-self: center;
 }
 
+table, td, th {
+    border: 1px solid;
+  }
+  
+table {
+    border-collapse: collapse;
+  }
+
 .center {
     display: flex;
     justify-content: center;
@@ -21,6 +29,10 @@ p {
 
 .opacity {
     opacity: 0.8;
+}
+
+.hidden{
+    visibility: hidden;
 }
 
 #formcontainer {
