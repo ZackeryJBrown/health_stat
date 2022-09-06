@@ -2,10 +2,10 @@
 <html>
 
 
-<meta 
-	name="viewport" content="width=device-width, initial-scale=1.0"
-	charset="UTF-8"	
->
+<meta charset="UTF-8">
+	<!--below is the mobile display scaling-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <head>
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -17,12 +17,28 @@
 	<script src="includes/jquery.min.js"></script>
 </head>
 
+<header class="navcontainer">
+        
+            <h1 class="logo">Health Stat</h1>
+        
+        <nav class="container">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="graphs.php">Review History</a></li>
+                
+           
+			
+			</ul>
+        </nav>
+</header>
+
 
 <title>
 	Health Stat
 </title>
 
 <body>
+	<br>
 	<div id="formcontainer" class="center, opacity">
 	<p>Blood Pressure Logging</p>
 		<br>
@@ -34,16 +50,7 @@
 			<br>
 			<input type="number" id="pulsefield" placeholder="Pulse per Min" /input>
 			<br>
-			<input type="submit" id="submitbutton" value="Submit" /input>
-
-			<br>
-			<br>
-
-			<!--add an image to src to make it a clickable image-->
-			<button src='' onClick="location.href='graphs.php'" type="button">Review History</button>
-			<br>
-			<!--make a page with some weird avant-garde stuff that's fun to play with-->
-			<button onClick="location.href=''" type="button">De-stress</button>
+			<input type="submit" id="submitbutton" value="Submit" class="clickables" /input>
 			</form>
 		</div>
 			

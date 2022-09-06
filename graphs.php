@@ -18,6 +18,22 @@
 	<script src="includes/d3.min.js"></script>
 </head>
 
+<header class="navcontainer">
+        
+            <h1 class="logo">NavLogo</h1>
+        
+        <nav class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="graphs.php">Review History</a></li>
+                
+           
+			
+			</ul>
+        </nav>
+</header>
+
+
 <title>Health Review</title>
 
 <body>
@@ -33,7 +49,8 @@
 
 
 
-	<button id="load_results">Load Results</button>
+	<button class="clickables" id="load_results">Load Results</button>
+	<button class="clickables" id="graphbutton">Show Graph</button>
 
 	<div id="table_div" class="hidden">
 	<table id=results_table>
@@ -42,10 +59,14 @@
     		<th>Diastolic</th>
     		<th>Heartrate (BPM)</th>
   		</tr>
+	</table>
 	</div>
-  
- 
-</table> 
+
+
+	<!--barchart start-->
+	<div id="chartSVG">
+		
+	</div>
 
 
 </body>
