@@ -13,7 +13,7 @@
 	
 	//selecting data based on daterange
 	$sql = "SELECT dia, sys, bpm, dateonly FROM bloodpressure
-			WHERE dateonly BETWEEN $formArray[startdate] AND dateonly <= $formArray[enddate];";
+			WHERE dateonly BETWEEN '$formArray[startdate]' AND '$formArray[enddate]';";
 
 
 	$results = $conn->query($sql);

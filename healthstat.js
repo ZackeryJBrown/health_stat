@@ -4,21 +4,17 @@ $(document).ready(function(){
 //mysql2
 //jquery3.6.0
 
-
-var sysObj = document.getElementById("sysfield");
+/*var sysObj = document.getElementById("sysfield");
 var diaObj = document.getElementById("diafield");
-var pulseObj = document.getElementById("pulsefield");
+var pulseObj = document.getElementById("pulsefield");*/
 var submitButtonObj = document.getElementById("submitbutton");
 var userInputsValid = true;
-
 
 var formArray = {
   "sysValue"  : 0,
   "diaValue"  : 0,
   "pulseValue": 0
 };
-
-
 
 
 function argsValid(argsArray){
@@ -38,16 +34,19 @@ function argsValid(argsArray){
   };
 };
 
+function grabVals(){
+  formArray["sysValue"] = parseInt($("#sysfield").val());  
+  formArray["diaValue"] = parseInt($("#diafield").val());
+  formArray["pulseValue"] = parseInt($("#pulsefield").val());
+};
+
 //Submit click event
 $(submitButtonObj).click(function(event) {
-    formArray["sysValue"] = parseInt(sysObj.value);  
-    formArray["diaValue"] = parseInt(diaObj.value);
-    formArray["pulseValue"] = parseInt(pulseObj.value);
+    grabVals();
 
     //checking input validity
     argsValid(formArray);
     
-
     if (!userInputsValid){
       event.preventDefault();
       alert("Input was not valid, it must be a number between 0-300.");
@@ -62,15 +61,7 @@ $(submitButtonObj).click(function(event) {
           alert(data); 
           });
 
-      
       alert("Data submitted Successfully");
     };
-    
-    //clear entries
-    
   });
-
-
-
-
 });

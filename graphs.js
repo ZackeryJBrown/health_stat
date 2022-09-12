@@ -11,31 +11,34 @@ $(document).ready(function(){
         "enddate"  : ""
       };
     
-    var parsedData = [];
-
-
-    //DONE -get values from selectors
-    $("#start_date").change(function() {
-        dateArray["startdate"] = $("#start_date").val();
-    });
-
-    $("#end_date").change(function() {
-        dateArray["enddate"] = $("#end_date").val();
-    });
-
     
     $("#load_results").click(function(){
-        
+        $("#table_div").empty();
+        dateArray["startdate"] = "";
+        dateArray["enddate"] = "";
+        var parsedData = [];
+        dateArray["startdate"] = $("#start_date").val();
+        dateArray["enddate"] = $("#end_date").val();
+
+        if (dateArray["startdate"] > dateArray["enddate"]){
+            alert("Error: Selected a starting and ending date that are not valid");
+        };
         //DONE -.post the array to load_bloodpressure_data.php
         //
         $.post("includes/load_bloodpressure_data.php", {
             datesPosted: dateArray
           }, function(data, status){
                 parsedData = JSON.parse(data);
-                document.getElementById("table_div").classList.remove("hidden");
+                $("#table_div").removeClass("hidden");
+                $("#table_div").append("<tr>" +
+                    "<th>Systolic</th>" +
+                    "<th>Diastolic</th>" +
+                    "<th>Heartrate (BPM)</th>" +
+                    "<th>Date</th>" +
+                  "</tr>");
                 //for each loop that writes out readable format
                 for (var i=0 ; i < parsedData.length ; i++){
-                    $("#results_table").append("<tr>" + "<td>" + 
+                    $("#table_div").append("<tr>" + "<td>" + 
                         parsedData[i].sys + "</td> <td>" + 
                         parsedData[i].dia + "</td> <td>" + 
                         parsedData[i].bpm + "</td> <td>" + 
@@ -57,13 +60,14 @@ $("#graphbutton").click(function(){
     };
 
     var width = 850;
-    var height = 400;
+    var height = 100;
 
+    console.log(parsedData.length);
     //check this to insert into the HTML, needs changes
     var svg = d3.select("#chartSVG").append("svg")
                     .attr("class", "chartArea")
                     .attr("width", width)
-                    .attr("height", height * parsedData.length);
+                    .attr("height", (height * parsedData.length));
 
 
     var xScale = d3.scaleBand()
@@ -99,6 +103,10 @@ $("#graphbutton").click(function(){
 
     
 
+
+
+    
+
     svg.selectAll("g")
     .data(parsedData)
     .enter().append("rect")
@@ -108,7 +116,7 @@ $("#graphbutton").click(function(){
     	.attr( "width", xScale.bandwidth() )
     	.attr( "y", function(parsedData){ return yScale(parsedData.bpm); } )
     	.attr( "height", function(parsedData){ return height - yScale(parsedData.bpm); });
-
+    
 
   // Provided
   svg.append("g")

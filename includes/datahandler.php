@@ -13,8 +13,8 @@ if (isset ($_POST['incomingData'])){
     $sqlImplode = implode(",", $formArray);
 
     $sql = 
-    "INSERT INTO bloodpressure (dia , sys, bpm)
-    VALUES ($sqlImplode);";
+    "INSERT INTO bloodpressure (dia , sys, bpm, dateonly)
+    VALUES ($sqlImplode, CURDATE());";
 
     // if condition runs the query
     if ($conn->query($sql) === FALSE) {
