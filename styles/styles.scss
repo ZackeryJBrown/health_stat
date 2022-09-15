@@ -1,4 +1,5 @@
 $navBackground: #72928c;
+$opacityBackground: rgba(114,146,140, .8);
 $clickHover: rgba(224, 244, 244, 1);
 $clickableBackground: rgba(224, 244, 244, .8);
 
@@ -20,9 +21,26 @@ body {
     font-size: 100%;
 }
 
+.bodycontainer {
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 10px;
+    max-width: fit-content;
+}
+
+.resultscontainer{
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-top: 10px;
+    background-color: $opacityBackground;
+    padding: 5px;
+    max-width: fit-content;
+}
+
 .clickables {
     background-color: $clickableBackground;
     padding: 5px;
+    margin-top: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -41,6 +59,7 @@ p {
 
 table, td, th {
     border: 1px solid;
+    padding: 2px;
   }
   
 table {
@@ -59,6 +78,7 @@ table {
 
 .hidden{
     visibility: hidden;
+    
 }
 
 #formcontainer {
@@ -69,17 +89,11 @@ table {
     padding: 10px;
     margin: auto;
     text-align: center;
-    
 }
+
 
 svg {
     background: #fff;
-}
-
-rect {
-    fill:aqua;
-    stroke-width: 1px;
-    stroke:#fff;
 }
 
 .navcontainer {
@@ -92,6 +106,7 @@ rect {
 
 .logo {
     background-color: $navBackground;
+    margin-right: 5px;
 }
 
 .logo h1 {

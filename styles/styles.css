@@ -14,9 +14,30 @@ body {
   font-size: 100%;
 }
 
+.bodycontainer {
+  border-radius: 5px;
+  margin: 5px;
+  margin-top: 10px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.resultscontainer {
+  border-radius: 5px;
+  margin-left: 10%;
+  margin-top: 10px;
+  background-color: rgba(114, 146, 140, 0.8);
+  padding: 5px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
 .clickables {
   background-color: rgba(224, 244, 244, 0.8);
   padding: 5px;
+  margin-top: 5px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -34,6 +55,7 @@ p {
 
 table, td, th {
   border: 1px solid;
+  padding: 2px;
 }
 
 table {
@@ -68,12 +90,6 @@ svg {
   background: #fff;
 }
 
-rect {
-  fill: aqua;
-  stroke-width: 1px;
-  stroke: #fff;
-}
-
 .navcontainer {
   display: flex;
   justify-content: flex-end;
@@ -84,6 +100,7 @@ rect {
 
 .logo {
   background-color: #72928c;
+  margin-right: 5px;
 }
 
 .logo h1 {

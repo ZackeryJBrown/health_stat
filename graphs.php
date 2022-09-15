@@ -21,9 +21,9 @@
 
 <header class="navcontainer">
 
-		<img src='favicon/hearticon64.png'>
+		<img class="logo" src="favicon/hearticon64_white.webp">
             
-		<h1 class="logo">Health Stat</h1>
+		<h2 class="logo">Health Stat</h2>
         
         <nav class="navcontainer">
             <ul>
@@ -38,32 +38,28 @@
 
 <body>
 
+	<div class="resultscontainer">
+		<div class="bodycontainer, opacity">
+			<h1>Bloodpressure History</h1>
+			<p>Select starting and ending dates:</p>
+			<br>
+			<form>
+				<input id="start_date" class="form-controll" type="date" placeholder="Start Date">
+				<input id="end_date" class="form-controll" type="date" placeholder="End Date">
+			</form>
 
-	<h1>Bloodpressure History</h1>
-	<p>Select starting and ending dates:</p>
-	<br>
-	<form>
-		<input id="start_date" class="form-controll" type="date" placeholder="Start Date">
-		<input id="end_date" class="form-controll" type="date" placeholder="End Date">
-	</form>
 
 
+			<button class="clickables" id="load_results">Load Results</button>
+		</div>
+	
 
-	<button class="clickables" id="load_results">Load Results</button>
-	<button class="clickables" id="graphbutton">Show Graph</button>
-
-	<div id="table_div" class="hidden">
-	<table id=results_table>
-  		
-	</table>
+		<div id="table_div" class="hidden, bodycontainer">
+			<table id=results_table>
+				
+			</table>
+		</div>
 	</div>
-
-
-	<!--barchart start-->
-	<div id="chartSVG">
-		
-	</div>
-
 
 </body>
 

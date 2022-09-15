@@ -20,9 +20,9 @@
 
 <header class="navcontainer">
 
-		<img src='favicon/hearticon64.png'>
+		<img class="logo" src="favicon/hearticon64_white.webp">
             
-		<h1 class="logo">Health Stat</h1>
+		<h2 class="logo">Health Stat</h2>
         
         <nav class="navcontainer">
             <ul>
@@ -40,7 +40,8 @@
 <body>
 	<br>
 	<div id="formcontainer" class="center, opacity">
-	<p>Blood Pressure Logging</p>
+	<h1>Blood Pressure Logging</h1>
+	<p font-size="12px">Enter your blood pressure results into the form below to store them for future review.</p>
 		<br>
 		<div class="center, opacity">
 			<form  accept-charset=utf-8 action=# method="POST" id="bloodpressureform">
