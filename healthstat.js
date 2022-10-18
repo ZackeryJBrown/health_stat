@@ -4,9 +4,6 @@ $(document).ready(function(){
 //mysql2
 //jquery3.6.0
 
-/*var sysObj = document.getElementById("sysfield");
-var diaObj = document.getElementById("diafield");
-var pulseObj = document.getElementById("pulsefield");*/
 var submitButtonObj = document.getElementById("submitbutton");
 var userInputsValid = true;
 
@@ -15,7 +12,6 @@ var formArray = {
   "diaValue"  : 0,
   "pulseValue": 0
 };
-
 
 function argsValid(argsArray){
   for (var storedInputs in argsArray){

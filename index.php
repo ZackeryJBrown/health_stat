@@ -28,6 +28,7 @@
             <ul>
 				<li><a href="index.php">Home</a></li>
                 <li><a href="graphs.php">Review History</a></li>
+        		<li><a href="/index.html">ZjB Portfolio</a></li>
 			</ul>
         </nav>
 </header>
@@ -45,13 +46,13 @@
 		<br>
 		<div class="center, opacity">
 			<form  accept-charset=utf-8 action=# method="POST" id="bloodpressureform">
-			<input type="number" id="sysfield" placeholder="SYS" /input>
-			<br>
-			<input type="number" id="diafield" placeholder="DIA" /input>
-			<br>
-			<input type="number" id="pulsefield" placeholder="Pulse per Min" /input>
-			<br>
-			<input type="submit" id="submitbutton" value="Submit" class="clickables" /input>
+				<input type="number" id="sysfield" placeholder="SYS" /input>
+				<br>
+				<input type="number" id="diafield" placeholder="DIA" /input>
+				<br>
+				<input type="number" id="pulsefield" placeholder="Pulse per Min" /input>
+				<br>
+				<input type="submit" id="submitbutton" value="Submit" class="clickables" /input>
 			</form>
 		</div>
 			
