@@ -1,0 +1,144 @@
+$navBackground: #72928c;
+$opacityBackground: rgba(114,146,140, .8);
+$clickHover: rgba(224, 244, 244, 1);
+$clickableBackground: rgba(224, 244, 244, .8);
+
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Oxygen", Arial, Helvetica, sans-serif;
+}
+
+html {
+    background: 
+        url(mountain.webp) center no-repeat fixed,
+        url(mountainbackgroundright.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+
+body {
+    font-size: 100%;
+}
+
+.bodycontainer {
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 10px;
+    max-width: fit-content;
+}
+
+.resultscontainer{
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-top: 10px;
+    background-color: $opacityBackground;
+    padding: 5px;
+    max-width: fit-content;
+}
+
+.clickables {
+    background-color: $clickableBackground;
+    padding: 5px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+.clickables:hover {
+    background-color: $clickHover;
+}
+
+p {
+    font-size: 1.3em;
+    align-self: center;
+}
+
+table, td, th {
+    border: 1px solid;
+    padding: 2px;
+  }
+  
+table {
+    border-collapse: collapse;
+  }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opacity {
+    opacity: 0.8;
+}
+
+.hidden{
+    visibility: hidden;
+    
+}
+
+#formcontainer {
+    background-color: $navBackground;
+    width: 25%;
+    border: 15px solid $navBackground;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+
+svg {
+    background: #fff;
+}
+
+.navcontainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10%;
+    background-color: $navBackground;
+}
+
+.logo {
+    background-color: $navBackground;
+    margin-right: 5px;
+}
+
+.logo h1 {
+    background-color: $navBackground;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: $navBackground;
+}
+
+ul {
+    background-color: $navBackground;
+}
+
+ul li {
+    background-color: $navBackground;
+    list-style: none;
+    display: inline-block;
+    line-height: 100px;
+}
+
+ul li a {
+    color: #2c2c2c;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    padding: 0 20px;
+    background-color: $navBackground;
+
+}
+
+ul li a:hover{
+    background-color: $clickHover;
+}
