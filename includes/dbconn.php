@@ -1,9 +1,11 @@
 <?php
+    include("config.php");
+
     $servername = "localhost";
     $username = "root";
     //enter password and database name
-    $password = "";
-    $dbname = "";
+    $password = $passw;
+    $dbname = $dbn;
     $conn = "";
     try{
         if ($username =="" || $password ==""){
