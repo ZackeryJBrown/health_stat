@@ -14,7 +14,7 @@ if (isset ($_POST['incomingData'])){
     //PDO updates
     $sql = $pdo->prepare("INSERT INTO bloodpressure (dia , sys, bpm, dateonly) VALUES ($sqlImplode, CURDATE());");
     $sql->execute();
-    $fetch = $sql->fetch();
+    //$fetch = $sql->fetch();
 
 
     if ($sql->rowCount() === 0) {

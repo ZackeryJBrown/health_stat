@@ -3,7 +3,7 @@
 	ini_set('display_errors', '1');
 		
 	include 'dbconn.php';
-	$conn;
+	$pdo;
 	
 	$returnArray;
 
@@ -11,20 +11,17 @@
 		$formArray = $_POST['datesPosted'];
 		
 	
+
+	$sql = $pdo->prepare("SELECT dia, sys, bpm, dateonly FROM bloodpressure WHERE dateonly BETWEEN '$formArray[startdate]' AND '$formArray[enddate]';");
+	$sql->execute();
 	//selecting data based on daterange
-	$sql = "SELECT dia, sys, bpm, dateonly FROM bloodpressure
-			WHERE dateonly BETWEEN '$formArray[startdate]' AND '$formArray[enddate]';";
 
-
-	$results = $conn->query($sql);
-	if ($results === FALSE) {
-		echo "Error: " . "<br>" . $conn->error;
-
-	} else if (mysqli_num_rows($results) == 0){
-		echo "Error: No results returned from query.";
+	//$results = $conn->query($sql);
+	if ($sql->rowCount() === 0) {
+		echo "Error";
 
 	} else {
-		while ($row = mysqli_fetch_assoc($results)){
+		while ($row = $sql->fetch(PDO::FETCH_ASSOC)){
 			$dia = $row["dia"];
 			$sys = $row["sys"];
 			$bpm = $row["bpm"];
@@ -33,12 +30,11 @@
 			//this appends each new array creating multidimentional array
 			$returnArray[] = array("sys"=>$sys,"dia"=>$dia,"bpm"=>$bpm,"dateonly"=>$dateonly);
 
-		}
+			}
 		$returnArray = json_encode($returnArray);
 		echo $returnArray;
-	}
+		}
 	}
 	
-	$conn->close();
-	exit;
+	$dbh=NULL;
 ?>
